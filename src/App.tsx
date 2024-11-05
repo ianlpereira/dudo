@@ -11,6 +11,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { GroupsPage } from "./pages/Groups/GroupsPage";
 import { GroupDetailsPage } from "./pages/Groups/GroupDetailsPage";
 import { FriendsPage } from "./pages/Friends/FriendsPage";
+import { AddNewGroupPage } from "./pages/Groups/AddNewGroupPage";
 
 const theme = createTheme({});
 
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
   {
     path: "/groups/:id",
     element: <GroupDetailsPage />,
+  },
+  {
+    path: "/groups/newGroup",
+    element: <AddNewGroupPage />,
   },
   {
     path: "/friends",

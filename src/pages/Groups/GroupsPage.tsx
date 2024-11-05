@@ -1,4 +1,4 @@
-import { Avatar, Divider, IconButton } from "@mui/material";
+import { Avatar, Button, Divider, IconButton } from "@mui/material";
 import { mockedGroup } from "../../types";
 import styled from "styled-components";
 import { PageLayout } from "../../components/PageLayout";
@@ -25,32 +25,40 @@ const GroupNameDiv = styled.div`
 export function GroupsPage(): JSX.Element {
   return (
     <PageLayout title="Groups Page">
-      {mockedGroup.map((group) => (
-        <div>
-          <GroupNameDiv>
-            <h2>{group.name}</h2>
-            <Link to={`/groups/${group.id}`}>
-              <IconButton sx={{ color: "white" }}>
-                <Edit />
-              </IconButton>
-            </Link>
-          </GroupNameDiv>
-          <UserMemberDiv>
-            {group.users.map((member) => (
-              <UserMemberDiv>
-                <Avatar />
-                <div>{member.name}</div>
-              </UserMemberDiv>
-            ))}
-          </UserMemberDiv>
-          <Divider
-            sx={{
-              margin: "1rem 0",
-              borderColor: "white",
-            }}
-          />
-        </div>
-      ))}
+      <>
+        {mockedGroup.map((group) => (
+          <div>
+            <GroupNameDiv>
+              <h2>{group.name}</h2>
+              <Link to={`/groups/${group.id}`}>
+                <IconButton sx={{ color: "white" }}>
+                  <Edit />
+                </IconButton>
+              </Link>
+            </GroupNameDiv>
+            <UserMemberDiv>
+              {group.users.map((member) => (
+                <UserMemberDiv>
+                  <Avatar />
+                  <div>{member.name}</div>
+                </UserMemberDiv>
+              ))}
+            </UserMemberDiv>
+            <Divider
+              sx={{
+                margin: "1rem 0",
+                borderColor: "white",
+              }}
+            />
+          </div>
+        ))}
+
+        <Link to={"/groups/newGroup"}>
+          <Button variant="contained" color="success">
+            Criar novo grupo
+          </Button>
+        </Link>
+      </>
     </PageLayout>
   );
 }

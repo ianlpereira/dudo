@@ -1,12 +1,6 @@
 import { useState } from "react";
 import { PageLayout } from "../../components/PageLayout";
-import {
-  mockedGroup,
-  mockedUsers,
-  NewDudoFormDataI,
-  UserGroupI,
-  UserI,
-} from "../../types";
+import { mockedGroup, NewDudoFormDataI, UserGroupI } from "../../types";
 import {
   Avatar,
   AvatarGroup,
@@ -20,7 +14,7 @@ import {
 } from "@mui/material";
 import styled from "styled-components";
 import { MobileDateTimePicker } from "@mui/x-date-pickers";
-import { border, color, styled as muiStyled } from "@mui/system";
+import { styled as muiStyled } from "@mui/system";
 import { FriendSelector } from "../../components/FriendSelector";
 
 const FormContainer = styled.div`
